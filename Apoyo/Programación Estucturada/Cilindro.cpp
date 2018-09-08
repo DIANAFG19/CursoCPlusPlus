@@ -7,14 +7,17 @@ TIPO: Programación Estructurada.
 
 #include<iostream>
 #include<math.h>
-
+//Así definimos a la constante PI.
 #define M_PI 3.14159265358979323846 /* pi */
 
 using namespace std;
 //Declaración de función pedirParametros.
 void pedirValores();
-//Declaración de función calcular.
-double calculo(double, double);
+//Declaración de la función área.
+double area(double);
+//Declaración de función volumen.
+double volumen(double, double);
+
 
 int main()
 {
@@ -36,19 +39,19 @@ int main()
 //Definimos la función pedirValores.
 void pedirValores()
 {
-	double radio, altura, resultado;
+	double radio, altura, resulV, resulA;
 	cout<<"Ingrese el radio: "; 
 	cin>>radio;
 	cout<<"Ingrese la altura: "; 
 	cin>>altura;
-	//Llamada a la función calculo.
-	resultado = calculo(radio, altura);
+	//Llamada a la función volumen.
+	resultado = volumen(radio, altura);
 	//Mostramos el resultado.
 	cout<<"El volumen del cilindro es: "<<resultado<<endl;
 }
 
-//Definimos la función calculo.
-double calculo(double radio, double altura)
+//Definimos la función volumen.
+double volumen(double radio, double altura)
 {
 	//Hacemos el calculo.
 	double volumen;

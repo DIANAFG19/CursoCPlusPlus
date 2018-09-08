@@ -64,7 +64,11 @@ int main()
 		cout<<"¿Desea realizar otro calculo (si=s/no=n): ";
 		cin>>opcion;
 		system("CLS");
-	}while(opcion!='n');
+	}while(opcion=='s');
 	//Pausamos la consola para que no se cierre.
 	system("PAUSE");
 }
+
+
+
+

@@ -7,7 +7,7 @@ TIPO: Programación Estructurada.
 
 #include<iostream>
 #include<math.h>
-
+//Así definimos a la constante PI.
 #define M_PI 3.14159265358979323846 /* pi */
 
 using namespace std;
@@ -39,10 +39,6 @@ void pedirValores()
 	double e, r, f, l, c, resultado;
 	cout<<"Ingrese el valor del voltaje: "; 
 	cin>>e;
-	cout<<"Ingrese el valor de la resistencia: "; 
-	cin>>r;
-	cout<<"Ingrese el valor de la frecuencia: "; 
-	cin>>f;
 	cout<<"Ingrese el valor de la impedancia: "; 
 	cin>>l;
 	cout<<"Ingrese el valor de la capacitancia: "; 

@@ -54,6 +54,7 @@ int main()
 	{
 		cout<<"\n\t\tPROGRAMA: VOLMEN DE UN CILINDRO"<<endl<<endl;
 		Volumen V;
+		//Mandamos a llamar a ,os métodos.
 		V.pedirValores();
 		cout<<"¿Desea realizar otro calculo (si=s/no=n): ";
 		cin>>opcion;
