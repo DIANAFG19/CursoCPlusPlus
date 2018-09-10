@@ -16,9 +16,10 @@ using namespace std;
     {
     	//Variables que usamos dentro de la estructura.
         double e, r, f, l, c;
+        double resultado;
     };
 //Declaración de función pedirParametros.
-void pedirValores();
+void pedirValores(struct intensidad I);
 //Declaración de función calcular.
 double calculo(double, double, double, double, double);
 
@@ -26,39 +27,40 @@ int main()
 {
 	//Declara las variables para los ciclo for
     int i=0, n=0;
+    //Declaramos una variable para la estructura.
+    struct intensidad valores;
     //Inicio con un título.
     cout<<"\n\t\tPROGRAMA: INTENSIDAD"<<endl<<endl;
-    /*Se pide cuantos registros de alumnos se guardaran*/
+    /*Se pide cuantos registros de intensidad se guardaran*/
     cout<<"Ingrese cuantos datos desea introducir: ";
     cin>>n;
     //Ciclo for que va a recorrer según la cantidad escrita anteriormente
     for (i = 0; i < n; i++)
 	{
 		cout<<"\n\nCalculando Intensidad No."<<i + 1<<".";
-		pedirValores();
+		pedirValores(valores);
     }
 	//Pausamos la consola para que no se cierre.
 	system("PAUSE");	
 }
 
 //Definimos la función pedirValores.
-void pedirValores()
+void pedirValores(struct intensidad I)
 {
-	double e, r, f, l, c, resultado;
 	cout<<"\n\nIngrese el valor del voltaje: "; 
-	cin>>e;
+	cin>>I.e;
 	cout<<"Ingrese el valor de la resistencia: "; 
-	cin>>r;
+	cin>>I.r;
 	cout<<"Ingrese el valor de la frecuencia: "; 
-	cin>>f;
+	cin>>I.f;
 	cout<<"Ingrese el valor de la impedancia: "; 
-	cin>>l;
+	cin>>I.l;
 	cout<<"Ingrese el valor de la capacitancia: "; 
-	cin>>c;
+	cin>>I.c;
 	//Llamada a la función calculo.
-	resultado = calculo(e, r, f, l, c);
+	I.resultado = calculo(I.e, I.r, I.f, I.l, I.c);
 	//Mostramos el resultado.
-	cout<<"La intensidad de corriente es: "<<resultado<<endl;
+	cout<<"La intensidad de corriente es: "<<I.resultado<<endl;
 	//Regresamos al main.
 	return;
 }
