@@ -6,9 +6,9 @@ TIPO: Programación Orientada a Objetos.
 */
 
 #include<iostream> /*Librería, in out stream que se usa para las lineas cout y cin*/
-#include<math.h>
-//Así definimos a la constante PI.
-#define M_PI 3.14159265358979323846 /* pi */
+#include<math.h> /*Librería, utilizada para las operaciones matemáticas.*/
+
+#define PI 3.14159265358979323846 //Así definimos a la constante PI.
 
 using namespace std;
 //Declaración de la clase Intensidad.
@@ -53,18 +53,20 @@ double Intensidad::calculo(double e, double r, double f, double l, double c)
 }
 int main()
 {
-	//Declaración de variables.
-	char opcion;
-	//Inicio.
-	do
+	//Declara las variables para los ciclo for
+    int i=0, n=0;
+    //Inicio con un título.
+    cout<<"\n\t\tPROGRAMA: INTENSIDAD"<<endl<<endl;
+    /*Se pide cuantos registros de alumnos se guardaran*/
+    cout<<"Ingrese cuantos datos desea introducir: ";
+    cin>>n;
+    //Ciclo for que va a recorrer según la cantidad escrita anteriormente
+    for (i = 0; i < n; i++)
 	{
-		cout<<"\n\t\tPROGRAMA: INTENSIDAD"<<endl<<endl;
+		cout<<"\n\nCalculando Intensidad No."<<i + 1<<".";
 		Intensidad I;
 		I.pedirValores();
-		cout<<"¿Desea realizar otro calculo (si=s/no=n): ";
-		cin>>opcion;
-		system("CLS");
-	}while(opcion=='s');
+    }
 	//Pausamos la consola para que no se cierre.
 	system("PAUSE");
 }
