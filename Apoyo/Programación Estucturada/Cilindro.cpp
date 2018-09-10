@@ -8,7 +8,7 @@ TIPO: Programación Estructurada.
 #include<iostream>
 #include<math.h>
 //Así definimos a la constante PI.
-#define M_PI 3.14159265358979323846 /* pi */
+#define PI 3.14159265358979323846 /* pi */
 
 using namespace std;
 //Declaración de función pedirParametros.
@@ -18,11 +18,11 @@ double area(double);
 //Declaración de función volumen.
 double volumen(double, double);
 
-
 int main()
 {
 	//Declaración de variable opción.
 	char opcion;
+	
 	//Inicio.
 	do
 	{
@@ -39,23 +39,35 @@ int main()
 //Definimos la función pedirValores.
 void pedirValores()
 {
-	double radio, altura, resulV, resulA;
+	double radio, altura, resulA, resulV;
 	cout<<"Ingrese el radio: "; 
 	cin>>radio;
 	cout<<"Ingrese la altura: "; 
 	cin>>altura;
-	//Llamada a la función volumen.
-	resultado = volumen(radio, altura);
-	//Mostramos el resultado.
-	cout<<"El volumen del cilindro es: "<<resultado<<endl;
+	//Llamada a la función area.
+	resulA = area(radio);
+	//Lammada a la función volumen.
+	resulV = volumen(radio, altura);
+	//Mostramos los resultados.
+	cout<<"El área de la base del cilindro es: "<<resulA<<endl,
+	cout<<"El volumen del cilindro es: "<<resulV<<endl;
+}
+
+//Definimos la función de área
+double area(double radio)
+{
+	//Hacemos el cálculo.
+	double area;
+	area = (PI*pow(radio,2));
+	return area;
 }
 
 //Definimos la función volumen.
-double volumen(double radio, double altura)
+double volumen(double area, double altura)
 {
 	//Hacemos el calculo.
 	double volumen;
-	volumen = (M_PI*pow(radio,2)*altura);
+	volumen = (PI*pow(radio,2)*altura);
 	return volumen;
 }
 

@@ -5,7 +5,7 @@ PROBLEMA: Calcular la intensidad para "n" funciones.
 TIPO: Programación Orientada a Objetos.
 */
 
-#include<iostream>
+#include<iostream> /*Librería, in out stream que se usa para las lineas cout y cin*/
 #include<math.h>
 //Así definimos a la constante PI.
 #define M_PI 3.14159265358979323846 /* pi */

@@ -1,8 +1,8 @@
 /*
 AUTOR: ING. FLORES GARCÍA DIANA LAURA.
-FECHA: 06/09/18
+FECHA: 10/09/18
 PROBLEMA: Calcular la intensidad para "n" funciones.
-TIPO: Programación Estructurada.
+TIPO: Programación Estructurada con Estructuras.
 */
 
 #include<iostream> /*Librería, in out stream que se usa para las lineas cout y cin.*/
@@ -11,6 +11,12 @@ TIPO: Programación Estructurada.
 #define PI 3.14159265358979323846 /*Así definimos a la constante PI */
 
 using namespace std;
+//Declaración de la estrcutura intensidad.
+	struct intensidad
+    {
+    	//Variables que usamos dentro de la estructura.
+        double e, r, f, l, c;
+    };
 //Declaración de función pedirParametros.
 void pedirValores();
 //Declaración de función calcular.
@@ -18,17 +24,19 @@ double calculo(double, double, double, double, double);
 
 int main()
 {
-	/*Declara la variable para la opción del usuario*/
-    char opcion;
-	//Inicio.
-	do
+	//Declara las variables para los ciclo for
+    int i=0, n=0;
+    //Inicio con un título.
+    cout<<"\n\t\tPROGRAMA: INTENSIDAD"<<endl<<endl;
+    /*Se pide cuantos registros de alumnos se guardaran*/
+    cout<<"Ingrese cuantos datos desea introducir: ";
+    cin>>n;
+    //Ciclo for que va a recorrer según la cantidad escrita anteriormente
+    for (i = 0; i < n; i++)
 	{
-		cout<<"\n\t\tPROGRAMA: INTENSIDAD"<<endl<<endl;
+		cout<<"\n\nCalculando Intensidad No."<<i + 1<<".";
 		pedirValores();
-		cout<<"¿Desea realizar otro calculo (si=s/no=n): ";
-		cin>>opcion;
-		system("CLS");
-	}while(opcion!='n');
+    }
 	//Pausamos la consola para que no se cierre.
 	system("PAUSE");	
 }
@@ -37,7 +45,7 @@ int main()
 void pedirValores()
 {
 	double e, r, f, l, c, resultado;
-	cout<<"Ingrese el valor del voltaje: "; 
+	cout<<"\n\nIngrese el valor del voltaje: "; 
 	cin>>e;
 	cout<<"Ingrese el valor de la resistencia: "; 
 	cin>>r;
@@ -51,6 +59,8 @@ void pedirValores()
 	resultado = calculo(e, r, f, l, c);
 	//Mostramos el resultado.
 	cout<<"La intensidad de corriente es: "<<resultado<<endl;
+	//Regresamos al main.
+	return;
 }
 
 //Definimos la función calculo.
@@ -59,6 +69,7 @@ double calculo(double e, double r, double f, double l, double c)
 	//Hacemos el calculo.
 	double intensidad;
 	intensidad = e/(sqrt(pow(r,2)+(pow(((2*PI*f*l)-(1/(2*PI*f*c))),2))));
+	//Regresamos a la función pedirValores.
 	return intensidad;
 }
 
