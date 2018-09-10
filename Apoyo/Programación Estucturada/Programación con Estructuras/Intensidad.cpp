@@ -7,7 +7,6 @@ TIPO: Programación Estructurada con Estructuras.
 
 #include<iostream> /*Librería, in out stream que se usa para las lineas cout y cin.*/
 #include<math.h> /*Librería, se utiliza para las operaciones matemáticas avanzadas.*/
-
 #define PI 3.14159265358979323846 /*Así definimos a la constante PI */
 
 using namespace std;
@@ -18,7 +17,7 @@ using namespace std;
         double e, r, f, l, c;
         double resultado;
     };
-//Declaración de función pedirParametros.
+//Declaración de función pedirValores con la estructura.
 void pedirValores(struct intensidad I);
 //Declaración de función calcular.
 double calculo(double, double, double, double, double);
@@ -38,6 +37,7 @@ int main()
     for (i = 0; i < n; i++)
 	{
 		cout<<"\n\nCalculando Intensidad No."<<i + 1<<".";
+		//Llamamos a la función pedir valores con parámetro de la estructura.
 		pedirValores(valores);
     }
 	//Pausamos la consola para que no se cierre.
