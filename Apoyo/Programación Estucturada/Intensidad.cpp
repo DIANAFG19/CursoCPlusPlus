@@ -7,7 +7,6 @@ TIPO: Programación Estructurada.
 
 #include<iostream> /*Librería, in out stream que se usa para las lineas cout y cin.*/
 #include<math.h> /*Librería, se utiliza para las operaciones matemáticas avanzadas.*/
-
 #define PI 3.14159265358979323846 /*Así definimos a la constante PI */
 
 using namespace std;
